@@ -27,7 +27,7 @@ def select_pal(lg,ep):
     return selected
 
 with st.sidebar:
-    st.image('media\\logo_snaam.png',width=300)
+    st.image('media/logo_snaam.png',width=300)
     selected = option_menu(
         menu_title = "Menu",
         options = ["PAL","CHT"],
