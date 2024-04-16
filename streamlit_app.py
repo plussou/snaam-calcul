@@ -5,8 +5,7 @@ import pandas as pd
 
 # Function to generate nudge
 def select_cht(lg,ep,pose):
-    path= "../data"
-    gamme_cht=pd.read_csv(path+"/gamme_cht.csv",dtype={'h_plancher':int})
+    gamme_cht=pd.read_csv("data/gamme_cht.csv",dtype={'h_plancher':int})
     sel_0=gamme_cht[gamme_cht['h_plancher']==ep]
     sel_1=sel_0[sel_0['portee_min']<=lg]
     selected=sel_1[sel_1['portee_max']>=lg].drop(labels=['portee_min','portee_max','h_plancher'],axis=1)
@@ -17,8 +16,7 @@ def select_cht(lg,ep,pose):
     return selected
 
 def select_pal(lg,ep):
-    path= "../data"
-    gamme_pal=pd.read_csv(path+"/gamme_pal.csv")
+    gamme_pal=pd.read_csv("data/gamme_pal.csv")
     sel_0=gamme_pal[gamme_pal['portee_min']<lg]
     selected=sel_0[sel_0['portee_max']>=lg].drop(labels=['portee_min','portee_max'],axis=1)
     selected.sort_values(by='h_poutre',inplace=True)
