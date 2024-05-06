@@ -15,7 +15,7 @@ def select_cht(lg,ep,pose):
     selected.set_index('code',inplace=True)
     return selected
 
-def select_pal(lg,ep):
+def select_pal(lg):
     gamme_pal=pd.read_csv("data/gamme_pal.csv")
     sel_0=gamme_pal[gamme_pal['portee_min']<lg]
     selected=sel_0[sel_0['portee_max']>=lg].drop(labels=['portee_min','portee_max'],axis=1)
@@ -38,7 +38,7 @@ if selected == "PAL":
 #    ep = st.number_input("Hauteur poutre", min_value=16, max_value=24, step=4)
 
     if st.button("Déterminer mon produit"):
-        st.dataframe(select_pal(lg,ep))
+        st.dataframe(select_pal(lg))
 
 if selected == "CHT":
     st.title("Chevêtre à longueur")
