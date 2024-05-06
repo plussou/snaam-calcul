@@ -11,7 +11,7 @@ def select_cht(lg,ep,pose):
     selected=sel_1[sel_1['portee_max']>=lg].drop(labels=['portee_min','portee_max','h_plancher'],axis=1)
     if pose=="Poutrelle/Mur":
         selected['code']=selected['code']+' (M)'
-    selected.rename({'p_ser':'charge admissible [kN]'},axis=1,inplace=True)
+    selected.rename({'p_ser':'charge admissible [kN/ml]'},axis=1,inplace=True)
     selected.set_index('code',inplace=True)
     return selected
 
@@ -21,7 +21,7 @@ def select_pal(lg):
     selected=sel_0[sel_0['portee_max']>=lg].drop(labels=['portee_min','portee_max'],axis=1)
     selected.sort_values(by='h_poutre',inplace=True)
     selected.set_index('code',inplace=True)
-    selected.rename({'p_ser':'charge admissible [kN]'},axis=1,inplace=True)
+    selected.rename({'p_ser':'charge admissible [kN/ml]'},axis=1,inplace=True)
     return selected
 
 with st.sidebar:
