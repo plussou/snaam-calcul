@@ -43,7 +43,7 @@ if selected == "PAL":
 if selected == "CHT":
     st.title("Chevêtre à longueur")
     pose = st.selectbox("Mode de pose",["Poutrelle/Poutrelle", "Poutrelle/Mur"])
-    lg = st.number_input("Dimension trémie", min_value=90, max_value=450,step=10)
+    lg = st.number_input("Dimension trémie", min_value=60, max_value=450,step=10)
     ep = st.number_input("Epaisseur plancher", min_value=16, max_value=24, step=4)
     if st.button("Déterminer mon produit"):
         st.dataframe(select_cht(lg,ep,pose))
