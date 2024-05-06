@@ -7,7 +7,7 @@ import pandas as pd
 def select_cht(lg,ep,pose):
     gamme_cht=pd.read_csv("data/gamme_cht.csv",dtype={'h_plancher':int})
     sel_0=gamme_cht[gamme_cht['h_plancher']==ep]
-    sel_1=sel_0[sel_0['portee_min']<=lg]
+    sel_1=sel_0[sel_0['portee_min']<lg]
     selected=sel_1[sel_1['portee_max']>=lg].drop(labels=['portee_min','portee_max','h_plancher'],axis=1)
     if pose=="Poutrelle/Mur":
         selected['code']=selected['code']+' (M)'
