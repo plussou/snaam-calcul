@@ -36,7 +36,7 @@ with st.sidebar:
 if selected == "PAL":
     st.title("Poutre à longueur")
     lg = st.number_input("Portée ", min_value=200, max_value=700,step=50)
-    ep = st.number_input("Hauteur poutre", min_value=16, max_value=24, step=4)
+    ep = st.number_input("Hauteur poutre", min_value=20, max_value=55, step=5)
     if st.button("Déterminer mon produit"):
         st.dataframe(select_pal(lg,ep))
 
