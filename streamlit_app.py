@@ -34,7 +34,7 @@ with st.sidebar:
 
 if selected == "PAL":
     st.title("Poutre à longueur")
-    lg = st.number_input("Portée ", min_value=200, max_value=420,step=25)
+    lg = st.number_input("Portée ", min_value=200, max_value=700,step=50)
 #    ep = st.number_input("Hauteur poutre", min_value=16, max_value=24, step=4)
 
     if st.button("Déterminer mon produit"):
