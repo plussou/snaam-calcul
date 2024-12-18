@@ -35,6 +35,7 @@ with st.sidebar:
 
 if selected == "PAL":
     st.title("Poutre à longueur")
+    st.image('media\\vue_enlong.jpg',width=500)
     lg = st.slider("Portée ", min_value=200, max_value=700,step=50)
     ep = st.number_input("Hauteur poutre", min_value=20, max_value=55, step=5)
     if st.button("Déterminer mon produit"):
